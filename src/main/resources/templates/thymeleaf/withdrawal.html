@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	class="no-js">
+<head>
+<meta charset="UTF-8">
+<title>회원 탈퇴</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<h2>회원 탈퇴</h2>
+		<hr>
+		<form action="/closet/withdrawal/withdrawal.do" method="post">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+			<div>
+				<label><span>PASSWORD</span> <input type="password" id="pw1" name="password"
+					placeholder="PASSWORD" onfocus="this.placeholder = ''"
+					onblur="this.placeholder = 'PASSWORD'"
+					onkeyup="this.value=this.value.replace(' ','')" required maxlength="20"></label>
+			</div>
+			<br>
+			<div>
+				<button type="submit">탈퇴하기</button>
+			</div>
+		</form>
+	</div>
+	
+</body>
+</html>
